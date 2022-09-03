@@ -1,9 +1,6 @@
 let input_user = document.querySelector("#input");
 const userImg = document.querySelector(".main-info-section");
-const bio = document.querySelector("#bio")
-const repos = document.querySelector("#repo");
-const followers = document.querySelector("#followers");
-const following = document.querySelector("#following");
+
 
 const fetchUser = (user_name) => {
     fetch(`https://api.github.com/users/${user_name}`)
@@ -19,10 +16,6 @@ const fetchUser = (user_name) => {
             <span class="name" id="name">${jsonData.name}</span>
             <a href="${jsonData.html_url}" id="username">@${jsonData.login}</a>
             `;
-                bio.innerHTML = jsonData.bio;
-                repos.innerHTML = jsonData.public_repos;
-                followers.innerHTML = jsonData.followers;
-                following.innerHTML = jsonData.following;
             }
 
         })
